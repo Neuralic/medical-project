@@ -1,0 +1,284 @@
+{
+  "diabetes": {
+    "code": "E11",
+    "system": "ICD-10",
+    "display": "Type 2 diabetes mellitus",
+    "synonyms": ["diabetes", "diabetic", "dm", "type 2 diabetes", "t2dm"]
+  },
+  "hypertension": {
+    "code": "I10",
+    "system": "ICD-10",
+    "display": "Essential (primary) hypertension",
+    "synonyms": ["hypertension", "high blood pressure", "htn", "hypertensive"]
+  },
+  "asthma": {
+    "code": "J45",
+    "system": "ICD-10",
+    "display": "Asthma",
+    "synonyms": ["asthma", "asthmatic", "bronchial asthma"]
+  },
+  "copd": {
+    "code": "J44",
+    "system": "ICD-10",
+    "display": "Chronic obstructive pulmonary disease",
+    "synonyms": ["copd", "emphysema", "chronic bronchitis", "obstructive lung disease"]
+  },
+  "heart_failure": {
+    "code": "I50",
+    "system": "ICD-10",
+    "display": "Heart failure",
+    "synonyms": ["heart failure", "hf", "chf", "congestive heart failure", "cardiac failure"]
+  },
+  "coronary_artery_disease": {
+    "code": "I25",
+    "system": "ICD-10",
+    "display": "Chronic ischemic heart disease",
+    "synonyms": ["cad", "coronary artery disease", "ischemic heart disease", "coronary disease"]
+  },
+  "stroke": {
+    "code": "I64",
+    "system": "ICD-10",
+    "display": "Stroke, not specified as hemorrhage or infarction",
+    "synonyms": ["stroke", "cerebrovascular accident", "cva", "brain attack"]
+  },
+  "atrial_fibrillation": {
+    "code": "I48",
+    "system": "ICD-10",
+    "display": "Atrial fibrillation",
+    "synonyms": ["afib", "atrial fibrillation", "auricular fibrillation"]
+  },
+  "pneumonia": {
+    "code": "J18",
+    "system": "ICD-10",
+    "display": "Pneumonia, unspecified organism",
+    "synonyms": ["pneumonia", "lung infection", "pneumonic"]
+  },
+  "covid19": {
+    "code": "U07.1",
+    "system": "ICD-10",
+    "display": "COVID-19, virus identified",
+    "synonyms": ["covid", "covid19", "covid-19", "coronavirus", "sars-cov-2"]
+  },
+  "influenza": {
+    "code": "J10",
+    "system": "ICD-10",
+    "display": "Influenza due to other identified influenza virus",
+    "synonyms": ["flu", "influenza", "grippe"]
+  },
+  "uti": {
+    "code": "N39.0",
+    "system": "ICD-10",
+    "display": "Urinary tract infection, site not specified",
+    "synonyms": ["uti", "urinary tract infection", "bladder infection", "cystitis"]
+  },
+  "ckd": {
+    "code": "N18.3",
+    "system": "ICD-10",
+    "display": "Chronic kidney disease, stage 3 (moderate)",
+    "synonyms": ["ckd", "chronic kidney disease", "renal failure", "kidney failure"]
+  },
+  "depression": {
+    "code": "F32",
+    "system": "ICD-10",
+    "display": "Major depressive disorder, single episode",
+    "synonyms": ["depression", "depressed", "mdd", "major depression"]
+  },
+  "anxiety": {
+    "code": "F41.1",
+    "system": "ICD-10",
+    "display": "Generalized anxiety disorder",
+    "synonyms": ["anxiety", "gad", "anxious", "panic disorder"]
+  },
+  "bipolar": {
+    "code": "F31",
+    "system": "ICD-10",
+    "display": "Bipolar disorder",
+    "synonyms": ["bipolar", "bipolar disorder", "manic depression"]
+  },
+  "schizophrenia": {
+    "code": "F20",
+    "system": "ICD-10",
+    "display": "Schizophrenia",
+    "synonyms": ["schizophrenia", "schizoaffective", "schizophrenic"]
+  },
+  "epilepsy": {
+    "code": "G40",
+    "system": "ICD-10",
+    "display": "Epilepsy",
+    "synonyms": ["epilepsy", "seizure disorder", "epileptic"]
+  },
+  "migraine": {
+    "code": "G43",
+    "system": "ICD-10",
+    "display": "Migraine",
+    "synonyms": ["migraine", "migraines", "migraine headache"]
+  },
+  "osteoporosis": {
+    "code": "M81",
+    "system": "ICD-10",
+    "display": "Osteoporosis without current pathological fracture",
+    "synonyms": ["osteoporosis", "osteoporotic", "bone density loss"]
+  },
+  "arthritis": {
+    "code": "M19",
+    "system": "ICD-10",
+    "display": "Arthrosis, unspecified",
+    "synonyms": ["arthritis", "osteoarthritis", "joint pain", "degenerative joint disease"]
+  },
+  "rheumatoid": {
+    "code": "M05",
+    "system": "ICD-10",
+    "display": "Rheumatoid arthritis with rheumatoid factor",
+    "synonyms": ["rheumatoid arthritis", "ra", "rheumatoid"]
+  },
+  "lupus": {
+    "code": "M32",
+    "system": "ICD-10",
+    "display": "Systemic lupus erythematosus",
+    "synonyms": ["lupus", "sle", "systemic lupus"]
+  },
+  "psoriasis": {
+    "code": "L40",
+    "system": "ICD-10",
+    "display": "Psoriasis",
+    "synonyms": ["psoriasis", "plaque psoriasis", "psoriatic"]
+  },
+  "eczema": {
+    "code": "L20",
+    "system": "ICD-10",
+    "display": "Atopic dermatitis",
+    "synonyms": ["eczema", "atopic eczema", "dermatitis"]
+  },
+  "anemia": {
+    "code": "D64",
+    "system": "ICD-10",
+    "display": "Anemia, unspecified",
+    "synonyms": ["anemia", "anaemia", "low hemoglobin"]
+  },
+  "hyperlipidemia": {
+    "code": "E78.5",
+    "system": "ICD-10",
+    "display": "Hyperlipidemia, unspecified",
+    "synonyms": ["hyperlipidemia", "high cholesterol", "dyslipidemia", "high lipids"]
+  },
+  "obesity": {
+    "code": "E66",
+    "system": "ICD-10",
+    "display": "Obesity",
+    "synonyms": ["obesity", "obese", "morbid obesity", "weight gain"]
+  },
+  "gout": {
+    "code": "M10",
+    "system": "ICD-10",
+    "display": "Gout",
+    "synonyms": ["gout", "gouty arthritis", "hyperuricemia"]
+  },
+  "fibromyalgia": {
+    "code": "M79.7",
+    "system": "ICD-10",
+    "display": "Fibromyalgia",
+    "synonyms": ["fibromyalgia", "fibro", "widespread pain"]
+  },
+  "hepatitis_c": {
+    "code": "B18.2",
+    "system": "ICD-10",
+    "display": "Chronic viral hepatitis C",
+    "synonyms": ["hepatitis c", "hcv", "chronic hep c"]
+  },
+  "hiv": {
+    "code": "B20",
+    "system": "ICD-10",
+    "display": "Human immunodeficiency virus [HIV] disease",
+    "synonyms": ["hiv", "aids", "human immunodeficiency virus"]
+  },
+  "tuberculosis": {
+    "code": "A15",
+    "system": "ICD-10",
+    "display": "Respiratory tuberculosis, bacteriologically and histologically confirmed",
+    "synonyms": ["tb", "tuberculosis", "pulmonary tuberculosis"]
+  },
+  "crohns": {
+    "code": "K50",
+    "system": "ICD-10",
+    "display": "Crohn disease",
+    "synonyms": ["crohns", "crohn disease", "crohn's disease"]
+  },
+  "ulcerative_colitis": {
+    "code": "K51",
+    "system": "ICD-10",
+    "display": "Ulcerative colitis",
+    "synonyms": ["ulcerative colitis", "uc", "colitis"]
+  },
+  "peptic_ulcer": {
+    "code": "K27",
+    "system": "ICD-10",
+    "display": "Peptic ulcer, site unspecified",
+    "synonyms": ["peptic ulcer", "stomach ulcer", "gastric ulcer"]
+  },
+  "thyroid_hypo": {
+    "code": "E03",
+    "system": "ICD-10",
+    "display": "Other hypothyroidism",
+    "synonyms": ["hypothyroidism", "underactive thyroid", "low thyroid"]
+  },
+  "thyroid_hyper": {
+    "code": "E05",
+    "system": "ICD-10",
+    "display": "Thyrotoxicosis [hyperthyroidism]",
+    "synonyms": ["hyperthyroidism", "overactive thyroid", "thyrotoxicosis"]
+  },
+  "allergic_rhinitis": {
+    "code": "J30",
+    "system": "ICD-10",
+    "display": "Allergic rhinitis",
+    "synonyms": ["allergic rhinitis", "hay fever", "seasonal allergies"]
+  },
+  "sleep_apnea": {
+    "code": "G47.3",
+    "system": "ICD-10",
+    "display": "Sleep apnea",
+    "synonyms": ["sleep apnea", "obstructive sleep apnea", "osa"]
+  },
+  "dementia": {
+    "code": "F03",
+    "system": "ICD-10",
+    "display": "Unspecified dementia",
+    "synonyms": ["dementia", "alzheimer", "alzheimer's disease"]
+  },
+  "parkinson": {
+    "code": "G20",
+    "system": "ICD-10",
+    "display": "Parkinson disease",
+    "synonyms": ["parkinson", "parkinson disease", "parkinson's disease"]
+  },
+  "osteomyelitis": {
+    "code": "M86",
+    "system": "ICD-10",
+    "display": "Osteomyelitis",
+    "synonyms": ["osteomyelitis", "bone infection"]
+  },
+  "cellulitis": {
+    "code": "L03",
+    "system": "ICD-10",
+    "display": "Cellulitis",
+    "synonyms": ["cellulitis", "skin infection", "bacterial cellulitis"]
+  },
+  "pancreatitis": {
+    "code": "K85",
+    "system": "ICD-10",
+    "display": "Acute pancreatitis",
+    "synonyms": ["pancreatitis", "acute pancreatitis", "inflamed pancreas"]
+  },
+  "gallstones": {
+    "code": "K80",
+    "system": "ICD-10",
+    "display": "Cholelithiasis",
+    "synonyms": ["gallstones", "cholelithiasis", "gallbladder stones"]
+  },
+  "diverticulitis": {
+    "code": "K57",
+    "system": "ICD-10",
+    "display": "Diverticular disease of intestine",
+    "synonyms": ["diverticulitis", "diverticular disease"]
+  }
+}

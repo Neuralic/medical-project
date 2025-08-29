@@ -1,0 +1,8 @@
+# Core FastAPI and server dependencies (Windows-friendly)
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+requests>=2.32.0
+
+# Note: Removed orjson and ujson to avoid Rust compilation issues
+# The app will work perfectly without these optional performance packages

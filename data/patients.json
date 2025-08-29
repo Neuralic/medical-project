@@ -1,0 +1,15 @@
+[
+  {
+    "id": "p001",
+    "name": {
+      "given": "John",
+      "family": "Doe"
+    },
+    "birthDate": "1968-05-17",
+    "gender": "male",
+    "conditions": [
+      "E11",
+      "I10"
+    ]
+  }
+]
