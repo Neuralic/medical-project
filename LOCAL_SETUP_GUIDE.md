@@ -1,214 +1,103 @@
-# 🚀 Local Setup Guide - AI on FHIR Backend
-
-## Prerequisites
-
-Before you start, make sure you have:
-- **Python 3.8+** installed ([Download here](https://python.org/downloads/))
-- **Git** installed (to clone/download the project)
-- **Internet connection** (for FHIR server access)
-
-## Step-by-Step Setup
-
-### 1. Download Your Project Files
+AI on FHIR - Medical Project
+Project Overview
+This project is an AI-powered system designed to process natural language medical 
+queries and integrate with FHIR (Fast Healthcare Interoperability Resources) servers. It 
+features a robust backend for data processing and an interactive frontend for user 
+interaction and data visualization.
+Key Features
+Natural Language Processing (NLP): Converts natural language queries into
+structured FHIR search parameters.
+FHIR Integration: Connects to live FHIR servers (e.g., HAPI FHIR) to retrieve patient
+data.
+RESTful API: A FastAPI-based backend providing endpoints for health checks and
+query parsing.
+Modular Architecture: Clear separation of concerns for NLP, FHIR integration, and
+API layers.
+Interactive Frontend: (Planned/Under Development) A React/Next.js application
+for user input, data visualization (charts, tables), and filtering of patient data.
+Project Architecture
+The project consists of two main components:
+Backend: Developed using Python with FastAPI, responsible for NLP processing,
+FHIR server communication, and exposing a RESTful API.
+Frontend: A Next.js application (TypeScript, React) for the user interface, designed
+to consume data from the backend API and present it visually.
+Prerequisites
+Before setting up the project, ensure you have the following installed:
+Python 3.8+: Download Python
+Git: Download Git
+Node.js (LTS recommended): Download Node.js
+npm, yarn, or pnpm: Package managers for Node.js (npm is included with
+Node.js)
+Backend Setup
+Follow these steps to set up and run the backend:
+Clone the Repository:
+bash
+git clone https://github.com/Neuralic/medical-project.git
+cd medical-project
+Create and Activate a Virtual Environment (Recommended):
 ```bash
-# If you have the project as a zip file, extract it
-# Or if you have it in a git repository:
-git clone <your-repository-url>
-cd ai-on-fhir-backend
-```
-
-### 2. Create Virtual Environment (Recommended)
-```bash
-# Create virtual environment
 python -m venv venv
-
-# Activate it (Windows)
-venv\Scripts\activate
-
-# Activate it (Mac/Linux)
+On Windows:
+.\venv\Scripts\activate
+On macOS/Linux:
 source venv/bin/activate
 ```
-
-### 3. Install Dependencies
-```bash
-# Install required packages
+Install Backend Dependencies:
+bash
 pip install -r requirements.txt
-
-# If you get errors, try upgrading pip first:
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### 4. Verify Project Structure
-Your project should look like this:
-```
-ai-on-fhir-backend/
-├── app/
-│   ├── __init__.py (create empty file if missing)
-│   ├── main.py
-│   ├── nlp.py
-│   ├── fhir_real.py
-│   └── fhir_sim.py
-├── data/
-│   ├── icd10_map.json
-│   └── patients.json
-├── tests/
-│   └── test_nlp.py
-├── requirements.txt
-├── run_demo.py
-└── README.md
-```
-
-**Important**: Create an empty `__init__.py` file in the `app/` directory if it doesn't exist:
+Run Backend Tests (Optional, but recommended):
 ```bash
-# Windows
-type nul > app\__init__.py
-
-# Mac/Linux
-touch app/__init__.py
-```
-
-## Testing Your Setup
-
-### Test 1: Run NLP Tests
-```bash
-python tests/test_nlp.py
-```
-**Expected output:** `All tests passed! ✅`
-
-### Test 2: Run Demo Script
-```bash
-# Test with different queries
 python run_demo.py "female diabetic patients over 50"
-python run_demo.py "male patients under 30"
-python run_demo.py "women with hypertension"
+
+Expected output will show detected
+entities and simulated FHIR results.
 ```
-
-**Expected output:** You should see:
-- Input query
-- Simulated FHIR request URL
-- Detected entities (gender, condition, age)
-- Live FHIR results from the server
-
-### Test 3: Start the API Server
+Start the Backend API Server:
+bash
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+The backend API will be accessible at http://localhost:8000 .
+Test API Endpoints (Optional):
+Health Check: Open http://localhost:8000/health in your browser. You
+should see {"status": "ok"} .
+Interactive Documentation: Visit http://localhost:8000/docs for FastAPI's
+interactive Swagger UI, where you can test the /parse endpoint.
+Frontend Setup
+Follow these steps to set up and run the frontend:
+Navigate to the Frontend Directory:
+bash
+cd frontend
+Install Frontend Dependencies:
 ```bash
-# Start the FastAPI server
-uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+npm install
+or yarn install
+or pnpm install
 ```
-
-**Expected output:**
-```
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process
-INFO:     Started server process
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-```
-
-### Test 4: Test API Endpoints
-Open a new terminal/command prompt and test:
-
+Start the Frontend Development Server:
 ```bash
-# Test health endpoint
-curl http://127.0.0.1:8000/health
-
-# Test parse endpoint (Windows - use double quotes)
-curl -X POST http://127.0.0.1:8000/parse -H "Content-Type: application/json" -d "{\"query\":\"female diabetic patients over 50\"}"
-
-# Test parse endpoint (Mac/Linux - use single quotes)
-curl -X POST http://127.0.0.1:8000/parse -H 'Content-Type: application/json' -d '{"query":"female diabetic patients over 50"}'
+npm run dev
+or yarn dev
+or pnpm dev
 ```
-
-**Alternative: Test with Browser**
-1. Go to http://127.0.0.1:8000/docs
-2. You'll see the FastAPI interactive documentation
-3. Click on `/parse` endpoint
-4. Click "Try it out"
-5. Enter: `{"query": "female diabetic patients over 50"}`
-6. Click "Execute"
-
-## Troubleshooting Common Issues
-
-### Issue 1: "Module not found" error
-```bash
-# Make sure you're in the right directory and venv is activated
-cd path/to/your/project
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Mac/Linux
-
-# Create missing __init__.py files
-echo. > app\__init__.py  # Windows
-touch app/__init__.py  # Mac/Linux
-```
-
-### Issue 2: "Permission denied" or "pip install fails"
-```bash
-# Try with --user flag
-pip install --user -r requirements.txt
-
-# Or upgrade pip first
-python -m pip install --upgrade pip
-```
-
-### Issue 3: "Port already in use"
-```bash
-# Use a different port
-uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload
-```
-
-### Issue 4: FHIR connection errors
-The app uses a public FHIR test server. If you get connection errors:
-- Check your internet connection
-- The public server might be down temporarily
-- Try again in a few minutes
-
-## Environment Configuration (Optional)
-
-You can customize the FHIR server:
-```bash
-# Windows
-set FHIR_BASE=https://your-fhir-server.com/baseR4
-uvicorn app.main:app --reload
-
-# Mac/Linux
-export FHIR_BASE=https://your-fhir-server.com/baseR4
-uvicorn app.main:app --reload
-```
-
-## Next Steps
-
-Once everything is working:
-
-1. **Explore the API**: Visit http://127.0.0.1:8000/docs for interactive documentation
-2. **Test different queries**: Try various natural language queries
-3. **Check the code**: Examine `app/nlp.py` to understand how NLP works
-4. **Build frontend**: Create a React/Next.js frontend to consume this API
-5. **Add security**: Implement authentication and HIPAA compliance
-
-## Quick Reference Commands
-
-```bash
-# Start development
-cd your-project-folder
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Mac/Linux
-uvicorn app.main:app --reload
-
-# Run tests
-python tests/test_nlp.py
-python run_demo.py "your query here"
-
-# Stop server
-Ctrl+C
-```
-
-## Need Help?
-
-If you run into issues:
-1. Check that Python 3.8+ is installed: `python --version`
-2. Ensure virtual environment is activated (you should see `(venv)` in terminal)
-3. Verify all files are in the right place
-4. Check the error messages carefully
-5. Make sure you have internet access for FHIR server connection
-
-Your backend is professionally built and should work smoothly! 🎉
+The frontend application will be accessible at http://localhost:3000 .
+Running the Full Application
+To run both the backend and frontend simultaneously:
+Open two separate terminal windows.
+In the first terminal, follow the Backend Setup steps (1-5) to start the backend API
+server.
+In the second terminal, follow the Frontend Setup steps (1-3) to start the frontend
+development server.
+Once both are running, open http://localhost:3000 in your web browser to interact
+with the full application.
+Troubleshooting
+"Module not found" (Python): Ensure your virtual environment is activated and
+all dependencies are installed ( pip install -r requirements.txt ).
+"Port already in use": If uvicorn or npm run dev fails due to a port conflict, you
+can change the port. For the backend, modify the --port argument (e.g., uvicorn
+app.main:app --host 0.0.0.0 --port 8001 --reload ). For the frontend, you might need
+to adjust the next.config.ts or run with a different port command (e.g., 
+PORT=3001 npm run dev ).
+FHIR Connection Errors: The backend uses a public FHIR test server. Ensure you
+have an active internet connection. If issues persist, the public server might be
+temporarily down.
+This README provides a comprehensive guide for setting up and running the AI on FHIR 
+project.
