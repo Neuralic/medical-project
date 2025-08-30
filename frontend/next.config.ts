@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',          // ← replaces next export
+  trailingSlash: true,       // optional, avoids 404 on nested routes
 };
 
-export default nextConfig;
+module.exports = nextConfig;
