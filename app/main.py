@@ -8,6 +8,18 @@ app = FastAPI(title="AI on FHIR - NLP to FHIR (Live HAPI)", version="1.1.0")
 class QueryIn(BaseModel):
     query: str
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://fhr-project.netlify.app",               # Netlify deploy preview
+        "https://55bdf2fae34d.ngrok-free.app"     # ngrok URL (change when it updates)
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/health")
 def health():
     return {"status": "ok"}
