@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://fhr-project.netlify.app",               # Netlify deploy preview
-        "https://55bdf2fae34d.ngrok-free.app"     # ngrok URL (change when it updates)
+        "https://aaab47e97a31.ngrok-free.app"     # ngrok URL (change when it updates)
     ],
     allow_credentials=True,
     allow_methods=["*"],
