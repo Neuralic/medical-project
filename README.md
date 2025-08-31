@@ -1,4 +1,4 @@
-# AI on FHIR – Take-Home Assessment
+# AI on FHIR – Assessment
 
 A lightweight **full-stack** demo that turns natural-language questions into FHIR queries.
 
@@ -37,3 +37,4 @@ Frontend: npm run build && next export → static site (Netlify, Vercel, GitHub 
 
 License
 MIT – feel free to fork and extend.
+
